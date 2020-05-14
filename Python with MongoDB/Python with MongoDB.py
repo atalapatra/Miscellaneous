@@ -2,7 +2,7 @@ import pymongo
 from pymongo import MongoClient
 import pprint
 
-connections = ('C:/Users/amitt/OneDrive/Code/2020-05-08 Python with MongoDB/config.json')
+connections = ('C:/Users/amitt/OneDrive/Code/2020-05-08 Python with MongoDB/connection.json')
 
 
 client = MongoClient(uri)
