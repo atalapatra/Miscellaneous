@@ -1,3 +1,4 @@
+import pandas as pd
 import pymongo
 from pymongo import MongoClient
 import pprint
@@ -34,3 +35,6 @@ if __name__ == "__main__":
     # Print all docs in collection
     for doc in british_pubs.find():
         print(doc)
+
+    # Save collections as dfs
+    british_pubs_df =  pd.DataFrame(list(british_pubs.find()))
