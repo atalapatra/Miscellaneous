@@ -1,9 +1,20 @@
 import pymongo
 from pymongo import MongoClient
 import pprint
+import json
 
-connections = ('C:/Users/amitt/OneDrive/Code/2020-05-08 Python with MongoDB/connection.json')
+connections = json.load(open('C:/Users/amitt/OneDrive/Code/2020-05-08 Python with MongoDB/connection.json'))
+uri = connections['MongoDB Atlas']['mflix URI']
 
+client = MongoClient(uri)
+
+db = client.aggregations
+
+
+
+
+
+connection_data = json.dumps(connections, indent=4)
 
 client = MongoClient(uri)
 
