@@ -38,3 +38,4 @@ if __name__ == "__main__":
 
     # Save collections as dfs
     british_pubs_df =  pd.DataFrame(list(british_pubs.find()))
+    welsh_pubs_df =  pd.DataFrame(list(welsh_pubs.find()))
