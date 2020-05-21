@@ -40,5 +40,6 @@ if __name__ == "__main__":
     # Save collections as dfs
     british_pubs_df =  pd.DataFrame(list(british_pubs.find()))
     welsh_pubs_df =  pd.DataFrame(list(welsh_pubs.find()))
-    
-    
+
+    # Count pubs by local authority
+    brit_pubs_by_local = british_pubs_df[['local_authority', 'fsa_id', 'name']].groupby(['local_authority']).count()
