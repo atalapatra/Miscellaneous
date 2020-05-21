@@ -4,6 +4,12 @@ from pymongo import MongoClient
 import pprint
 import json
 
+# Print all docs in collection
+def print_all_in_collection(collection):
+    cursor = collection.find()
+    for doc in cursor:
+        print(doc)
+
 if __name__ == "__main__":
     # Identify connection information
     connections = json.load(open('C:/Users/amitt/OneDrive/Code/2020-05-08 Python with MongoDB/connection.json'))
@@ -33,8 +39,7 @@ if __name__ == "__main__":
     document = british_pubs.find_one()
 
     # Print all docs in collection
-    for doc in british_pubs.find():
-        print(doc)
+    print_all_in_collection(british_pubs)
 
     # Save collections as dfs
     british_pubs_df =  pd.DataFrame(list(british_pubs.find()))
