@@ -1,3 +1,8 @@
+""" 
+https://towardsdatascience.com/inferential-statistics-series-t-test-using-numpy-2718f8f9bf2f
+
+"""
+
 ## Import the packages
 import numpy as np
 from scipy import stats
