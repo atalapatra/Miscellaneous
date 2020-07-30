@@ -2,6 +2,7 @@
 Useful Resources:
 http://docs.tweepy.org/en/v3.5.0/getting_started.html 
 https://towardsdatascience.com/tweepy-for-beginners-24baf21f2c25
+http://docs.tweepy.org/en/latest/
 """
 
 import tweepy
