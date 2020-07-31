@@ -7,6 +7,7 @@ http://docs.tweepy.org/en/latest/
 
 import tweepy
 import json
+import pandas as pd
 
 connections = json.load(open('C:/Users/amitt/OneDrive/Code/2020-07-29 Twitter API Keys/connection.json'))
 api_key = connections['Twitter API']['API Key']
@@ -23,3 +24,6 @@ api = tweepy.API(auth)
 public_tweets = api.home_timeline()
 for tweet in public_tweets:
     print (tweet.text)
+
+public_tweets = pd.DataFrame(public_tweets)
+public_tweets.iloc(1)
