@@ -6,6 +6,9 @@ http://docs.tweepy.org/en/latest/
 
 Creating The Twitter Sentiment Analysis Program in Python with Naive Bayes Classification
 https://towardsdatascience.com/creating-the-twitter-sentiment-analysis-program-in-python-with-naive-bayes-classification-672e5589a7ed
+
+Tweepy, TextBlob and Sentiment Analysis — Python
+https://medium.com/@r.ratan/tweepy-textblob-and-sentiment-analysis-python-47cc613a4e51
 """
 
 import tweepy
@@ -14,16 +17,7 @@ import pandas as pd
 
 ## Functions
 
-def buildTestSet(search_keyword):
-    try:
-        tweets_fetched = api.GetSearch(search_keyword, count = 100)
-        
-        print("Fetched " + str(len(tweets_fetched)) + " tweets for the term " + search_keyword)
-        
-        return [{"text":status.text, "label":None} for status in tweets_fetched]
-    except:
-        print("Unfortunately, something went wrong..")
-        return None
+
 
 ## Analysis
 
@@ -46,10 +40,7 @@ api = tweepy.API(auth)
 # 
 # public_tweets = pd.DataFrame(public_tweets)
     
-search_term = input("Enter a search keyword:")
-testDataSet = buildTestSet(search_term)
+tweets_fetched = api.search("game", count = 10)
 
-print(testDataSet[0:4])
-
-tweets_fetched = api.search("game", count = 100)
-
+for tweet in tweets_fetched:
+    print (f"{tweet.user.name}: {tweet.text}")
