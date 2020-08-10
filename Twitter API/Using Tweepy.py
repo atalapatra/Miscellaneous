@@ -17,7 +17,7 @@ import pandas as pd
 
 ## Functions
 
-
+def tweepyToDataframe ()
 
 ## Analysis
 
@@ -44,3 +44,8 @@ tweets_fetched = api.search("game", count = 10)
 
 for tweet in tweets_fetched:
     print (f"{tweet.user.name}: {tweet.text}")
+    
+cnn_breaking_news = api.user_timeline('cnnbrk')
+
+json_data = [i._json for i in cnn_breaking_news]
+df = pd.io.json.json_normalize(json_data)
